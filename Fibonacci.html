@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body{
+            background-color: gray;
+        }
+        .container{
+            background-color: #0F2431;
+            border: 5px solid #F5E4C3;
+            margin: auto;
+            width: 750px;
+            height: 275px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        #demo, .title{
+            color: white;
+        }
+    </style>
+
+</head>
+<body>
+<div class="container">
+    <p class="title">
+        This is a Fibonacci calculator. Just enter a number bellow!
+    </p>
+    <div>
+        <input id="kac" type="number">
+        <button type="button" onclick="Fibo()">Dene</button>
+    </div>
+    <p id="demo"></p>
+</div>
+
+<script>
+    var deger =document.getElementById("demo");
+
+
+    function Fibo() {
+        var sayi=document.getElementById("kac").value;
+        var fib = [0,1];
+
+        for(let i=2; i < sayi ; i++) {
+
+            fib.push(fib[i-2]+fib[i-1]);
+        }
+        deger.innerHTML=fib.join(",");
+
+    }
+
+</script>
+</body>
+</html>
